@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElevenLabs Voice Assistant Demo</title>
+  <!-- Base styling to match ElevenLabs design -->
+  <style>
+    /* Use ElevenLabs brand font (fallback to Arial sans-serif)  [oai_citation:8‡11labs-guides-dev.a17.dev](https://11labs-guides-dev.a17.dev/#:~:text=Font%20fallbacks%20ensure%20we%20can,Arial%20as%20a%20fallback%20font) */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #000;
+      background: #FFF;
+    }
+    /* Positioning and appearance of the assistant widget container */
+    elevenlabs-convai {
+      /* The widget will handle its internal styling and positioning (defaults to bottom-right) */
+      position: fixed; /* ensure it floats above content */
+      bottom: 20px;
+      right: 20px;
+      /* No additional styling needed here as the embed script applies design */
+    }
+    /* (Optional) Customize the chat overlay if needed */
+    .convai-widget-overlay {
+      /* This class name is hypothetical – the actual widget may use Shadow DOM.
+         The default styles from ElevenLabs are already tuned to match their UI. */
+      backdrop-filter: blur(2px); /* example: a subtle backdrop blur for overlay */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ElevenLabs Convai voice assistant widget embed code -->
+  <elevenlabs-convai 
+    agent-id="agent_01jx8wrr1fe91r1zdkac30e773"
+    avatar-orb-color-1="#2792DC" 
+    avatar-orb-color-2="#9CE6E6"
+    action-text="Need help?"        <!-- CTA text label -->
+    expand-text="Voice chat">      <!-- Button text to open chat -->
+  </elevenlabs-convai>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+  <!-- (Optional) Additional script for custom behavior could go here -->
+  <script>
+    // The ElevenLabs widget automatically handles open/close on button click,
+    // voice recording, transcription, and response playback. No extra JS needed for core functionality.
+    // We ensure the widget is ready and could hook events if desired (not required for basic usage).
+  </script>
+
+</body>
+</html>
